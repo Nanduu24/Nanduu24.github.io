@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nantha Kumar — AI / Machine Learning Engineer</title>
+<meta name="description" content="Nantha Kumar — AI/ML Engineer building production LLM systems: agentic workflows on LangGraph, grounded retrieval, and applied ML research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#E9EBEE;
+  --paper-2:#F4F5F6;
+  --ink:#11161A;
+  --petrol:#123A47;
+  --petrol-deep:#0C262F;
+  --petrol-soft:#1C4E5E;
+  --brass:#B07A22;
+  --slate:#5D6B72;
+  --line:#C9D0D4;
+
+  --display:'Bricolage Grotesque',Georgia,serif;
+  --sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+
+  --wrap:1180px;
+  --gutter:clamp(20px,5vw,64px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky;top:0;z-index:40;
+  background:var(--petrol-deep);
+  color:var(--paper-2);
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:58px}
+.bar .mark{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:1.02rem}
+.bar nav{display:flex;gap:26px;font-size:.9rem;color:#B9C7CD}
+.bar nav a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+.bar nav a:hover{color:#fff;border-bottom-color:var(--brass)}
+@media(max-width:720px){.bar nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--petrol);
+  color:#EDF1F2;
+  padding:clamp(56px,9vw,104px) 0 clamp(52px,8vw,88px);
+  background-image:linear-gradient(180deg,var(--petrol) 0%,var(--petrol-deep) 100%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(260px,.85fr);
+  gap:clamp(32px,6vw,72px);
+  align-items:start;
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(2.7rem,6.2vw,4.5rem);
+  line-height:.97;
+  letter-spacing:-.035em;
+  margin:0 0 14px;
+}
+.role{
+  font-size:clamp(1.02rem,1.6vw,1.18rem);
+  color:#9FE0C9;
+  font-weight:500;
+  margin:0 0 26px;
+}
+.hero p.lede{
+  max-width:52ch;
+  color:#CFDBDF;
+  font-size:1.06rem;
+  margin:0 0 30px;
+}
+.hero p.lede strong{color:#fff;font-weight:600}
+
+.contact{display:flex;flex-wrap:wrap;gap:10px}
+.contact a{
+  text-decoration:none;
+  font-size:.92rem;
+  padding:9px 16px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:2px;
+  color:#E6EDEF;
+  transition:background .18s ease,border-color .18s ease;
+}
+.contact a:hover{background:rgba(255,255,255,.1);border-color:var(--brass)}
+.contact a.primary{background:var(--brass);border-color:var(--brass);color:#170F02;font-weight:600}
+.contact a.primary:hover{background:#C98A2B}
+
+/* ---------- photo plate (right column) ---------- */
+.plate{position:relative}
+.plate-inner{
+  position:relative;
+  aspect-ratio:4/5;
+  background:var(--petrol-soft);
+  border:1px solid rgba(255,255,255,.2);
+  overflow:hidden;
+}
+.plate-inner::after{
+  content:"";position:absolute;inset:9px;
+  border:1px solid rgba(176,122,34,.55);
+  pointer-events:none;
+}
+#photo{width:100%;height:100%;object-fit:cover;object-position:center top}
+.plate-empty{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:8px;text-align:center;padding:24px;
+  color:#9FB3BA;font-size:.85rem;line-height:1.5;
+}
+.plate-empty span:first-child{
+  font-family:var(--display);font-size:1.55rem;color:#CFDBDF;letter-spacing:-.02em;
+}
+.plate-caption{
+  margin-top:14px;
+  font-size:.82rem;
+  color:#9FB3BA;
+  display:flex;justify-content:space-between;gap:12px;
+  border-top:1px solid rgba(255,255,255,.16);
+  padding-top:10px;
+}
+body.has-photo .plate-empty{display:none}
+
+/* ---------- sections ---------- */
+section{padding:clamp(54px,7vw,86px) 0}
+section + section{border-top:1px solid var(--line)}
+.sec-head{
+  display:flex;align-items:baseline;gap:18px;
+  margin:0 0 38px;
+}
+.sec-head h2{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(1.5rem,2.6vw,2rem);
+  letter-spacing:-.03em;
+  margin:0;
+}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+.sec-head .count{font-family:var(--mono);font-size:.82rem;color:var(--slate)}
+
+/* entries */
+.entry{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.9fr);
+  gap:clamp(20px,4vw,56px);
+  padding:30px 0;
+  border-top:1px solid var(--line);
+}
+.entry:first-of-type{border-top:none;padding-top:0}
+.entry h3{
+  font-family:var(--display);
+  font-size:1.24rem;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin:0 0 6px;
+  line-height:1.2;
+}
+.entry h3 a{text-decoration:none;border-bottom:1px solid var(--brass)}
+.meta{color:var(--slate);font-size:.92rem;margin:0}
+.stack{
+  margin:12px 0 0;
+  font-size:.84rem;
+  color:var(--petrol);
+  line-height:1.9;
+}
+.stack em{
+  font-style:normal;
+  border:1px solid var(--line);
+  background:var(--paper-2);
+  padding:3px 8px;
+  margin-right:5px;
+  white-space:nowrap;
+}
+.entry ul{margin:0;padding-left:19px;max-width:72ch}
+.entry li{margin-bottom:11px}
+.entry li:last-child{margin-bottom:0}
+.entry li b{font-weight:600}
+.num{font-family:var(--mono);color:var(--petrol);font-weight:500}
+
+/* skills */
+.skills{display:grid;gap:0}
+.skill-row{
+  display:grid;
+  grid-template-columns:minmax(0,.6fr) minmax(0,2.2fr);
+  gap:clamp(16px,4vw,48px);
+  padding:20px 0;
+  border-top:1px solid var(--line);
+}
+.skill-row:first-child{border-top:none;padding-top:0}
+.skill-row h3{font-size:1rem;font-weight:600;margin:0;letter-spacing:-.01em}
+.skill-row p{margin:0;color:#2C3439;font-size:.98rem}
+
+/* education + publication */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px)}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.edu{padding:22px 0;border-top:1px solid var(--line)}
+.edu:first-child{border-top:none;padding-top:0}
+.edu h3{font-family:var(--display);font-size:1.1rem;margin:0 0 4px;letter-spacing:-.02em}
+
+.pub{
+  background:var(--paper-2);
+  border-left:3px solid var(--brass);
+  padding:24px 28px;
+}
+.pub h3{font-family:var(--display);font-size:1.1rem;margin:0 0 8px;letter-spacing:-.02em}
+.pub p{margin:0 0 10px;color:#2C3439}
+.pub a{color:var(--petrol)}
+
+/* footer */
+footer{
+  background:var(--petrol-deep);
+  color:#CFDBDF;
+  padding:clamp(48px,7vw,76px) 0;
+}
+footer h2{
+  font-family:var(--display);
+  font-size:clamp(1.6rem,3.4vw,2.4rem);
+  letter-spacing:-.03em;
+  color:#fff;margin:0 0 16px;
+}
+footer p{max-width:50ch;margin:0 0 26px}
+footer .contact a{color:#E6EDEF}
+.colophon{
+  margin-top:44px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-size:.84rem;color:#8FA4AB;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .plate{max-width:330px}
+  .entry,.skill-row{grid-template-columns:1fr;gap:14px}
+}
+
+/* one orchestrated load sequence */
+.rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.22,.7,.3,1) forwards}
+.rise:nth-child(1){animation-delay:.05s}
+.d1{animation-delay:.12s}.d2{animation-delay:.2s}.d3{animation-delay:.28s}.d4{animation-delay:.36s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="mark">Nantha Kumar</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="rise">Nantha Kumar</h1>
+      <p class="role rise d1">AI / Machine Learning Engineer</p>
+      <p class="lede rise d2">
+        I build LLM systems that hold up outside a demo. A live agentic platform on LangGraph
+        with vector memory and multi-provider routing, a retrieval agent that
+        <strong>cites its sources and stays quiet when the evidence isn't there</strong>,
+        and applied ML research on rock permeability now heading to publication.
+      </p>
+      <div class="contact rise d3">
+        <a class="primary" href="mailto:reachnanduu24@gmail.com">Email me</a>
+        <a href="https://www.linkedin.com/in/nanthakumarashokanand" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Nanduu24" target="_blank" rel="noopener">GitHub</a>
+        <a href="tel:8178197132">817-819-7132</a>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         PHOTO GOES HERE.
+         Paste the base64 string (or an image URL) into the src below.
+         Example: src="data:image/jpeg;base64,/9j/4AAQSkZJRgABA..."
+         The "Add photo" placeholder hides itself automatically
+         as soon as src is filled in.
+         ============================================================ -->
+    <div class="plate rise d4">
+      <div class="plate-inner">
+        <img id="photo" src="" alt="Nantha Kumar">
+        <div class="plate-empty">
+          <span>Photo</span>
+          <span>Paste a base64 image into the <code>src</code> of <code>#photo</code>. Portrait crop, 4:5.</span>
+        </div>
+      </div>
+      <div class="plate-caption">
+        <span>Arlington, TX</span>
+        <span>Open to relocation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <div class="rule"></div>
+      <div class="count">4 projects</div>
+    </div>
+
+    <article class="entry">
+      <div>
+        <h3>Mindful AI</h3>
+        <p class="meta">Agentic AI platform with voice and memory — in production</p>
+        <p class="stack">
+          <em>Next.js</em><em>FastAPI</em><em>LangGraph</em><em>pgvector</em><em>Claude</em><em>Gemini</em><em>Stripe</em>
+        </p>
+      </div>
+      <ul>
+        <li>Shipped a six-stage LangGraph agent with provider-agnostic routing across Claude, Gemini 2.0 Flash and Llama 3.3 70B — switchable through a single environment variable — holding cost near <span class="num">$0.0002</span> per session.</li>
+        <li>Built RAG memory on Postgres with pgvector and HNSW indexing (768-dimension embeddings, custom cosine-similarity SQL) returning results in under <span class="num">200 ms</span>.</li>
+        <li>Added browser push-to-talk voice through Gemini speech-to-text and Eleven Labs, deployed across Vercel, Hugging Face Spaces and Supabase with LangSmith tracing, Clerk auth and Stripe billing.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div>
+        <h3>FleetIQ</h3>
+        <p class="meta">Grounded document Q&amp;A agent — Buildathon Dallas 2026, 32-hour build</p>
+        <p class="stack">
+          <em>LangGraph</em><em>FastAPI</em><em>Hybrid RAG</em>
+        </p>
+      </div>
+      <ul>
+        <li>Built a hybrid retrieval agent over <span class="num">1,014</span> fleet documents spanning 12 real carrier form types that answers with citations and abstains when the evidence is missing.</li>
+        <li>Generated the corpus from 12 templates with realistic entity variation, creating known ground truth so retrieval quality could actually be measured rather than eyeballed.</li>
+        <li>Delivered backend, dispatch interface and pitch inside the 32-hour window.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div>
+        <h3>Job Agent</h3>
+        <p class="meta">Autonomous job application pipeline</p>
+        <p class="stack">
+          <em>Python</em><em>LangGraph</em><em>Greenhouse</em><em>Lever</em><em>Ashby</em><em>Workable</em>
+        </p>
+      </div>
+      <ul>
+        <li>Ingests postings from four job boards, scores them with a heuristic filter followed by an LLM fit review, tailors the resume through a LangGraph workflow and renders the PDF — run end to end against live postings.</li>
+        <li>Added a fact-verification node that checks every generated claim against a structured profile and blocks invented skills, titles or dates before the document is rendered.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div>
+        <h3>AI Career Job Advisor</h3>
+        <p class="meta">LLM-powered career SaaS — 3-person Agile team</p>
+        <p class="stack">
+          <em>OpenAI</em><em>FastAPI</em><em>Next.js</em><em>PostgreSQL</em>
+        </p>
+      </div>
+      <ul>
+        <li>Owned resume-to-job-description matching, ATS scoring and cover-letter generation with schema-validated outputs.</li>
+        <li>Wrote <span class="num">25+</span> backend tests and contributed to a Selenium end-to-end suite.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Research</h2>
+      <div class="rule"></div>
+      <div class="count">Aug 2025 — present</div>
+    </div>
+
+    <article class="entry">
+      <div>
+        <h3>AI / Machine Learning Research Assistant</h3>
+        <p class="meta">iResearchE3 Lab, University of Texas at Arlington — Arlington, TX</p>
+        <p class="stack">
+          <em>scikit-learn</em><em>XGBoost</em><em>TensorFlow</em><em>Keras</em><em>Optuna</em><em>SHAP</em>
+        </p>
+      </div>
+      <ul>
+        <li>Built the lab's end-to-end ML pipeline in Python to predict rock permeability from NMR T2 measurements across <span class="num">720</span> carbonate core samples from two Kansas wells, handling targets spanning six orders of magnitude with log-space modelling and CDF-based feature encoding.</li>
+        <li>Tuned XGBoost, Random Forest and deep neural network regressors with nested Optuna search and 5-fold cross-validation, reaching a test R² near <span class="num">0.60</span> against the lab's SDR physics baseline.</li>
+        <li>Ran 50-iteration resampling across seven training sizes (120 to 720 samples) to map how accuracy scales with data volume.</li>
+        <li>Used SHAP and Spearman rank correlation to show that 4 of 11 features drive roughly <span class="num">95%</span> of the output. Co-authoring the manuscript.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What I work with</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="skills">
+      <div class="skill-row">
+        <h3>Languages</h3>
+        <p>Python, TypeScript, JavaScript, SQL, Java, C++, C</p>
+      </div>
+      <div class="skill-row">
+        <h3>AI &amp; LLM engineering</h3>
+        <p>LangGraph, LangChain, retrieval-augmented generation (hybrid and vector), prompt engineering, function calling, structured outputs, multi-provider LLM routing, grounding and hallucination guardrails, speech-to-text and text-to-speech, LangSmith, Anthropic Claude, OpenAI, Google Gemini, Groq, Llama 3.3</p>
+      </div>
+      <div class="skill-row">
+        <h3>Machine learning</h3>
+        <p>scikit-learn, XGBoost, Random Forest, TensorFlow, Keras, PyTorch, CNN, LSTM, Optuna, SHAP, cross-validation, hyperparameter tuning, model interpretability, NumPy, pandas</p>
+      </div>
+      <div class="skill-row">
+        <h3>Frameworks &amp; web</h3>
+        <p>Next.js, React, FastAPI, Node.js, Express, REST, GraphQL</p>
+      </div>
+      <div class="skill-row">
+        <h3>Data &amp; cloud</h3>
+        <p>PostgreSQL, pgvector (HNSW), Supabase, vector embeddings, Docker, Vercel, Hugging Face Spaces, Git, GitHub Actions, Stripe, Clerk</p>
+      </div>
+      <div class="skill-row">
+        <h3>Testing &amp; tooling</h3>
+        <p>Jest, Pytest, Selenium, Claude Code, Cursor, GitHub Copilot</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Background</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <div class="edu">
+          <h3>M.S. Computer Science, AI/ML Specialization</h3>
+          <p class="meta">University of Texas at Arlington — Arlington, TX</p>
+          <p class="meta">Aug 2024 – May 2026 · GPA 3.60 / 4.00</p>
+        </div>
+        <div class="edu">
+          <h3>B.Tech Information Technology</h3>
+          <p class="meta">Rajalakshmi Engineering College — Chennai, India</p>
+          <p class="meta">Aug 2020 – May 2024 · CGPA 8.28 / 10.00, First Class</p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <h3>Publication</h3>
+        <p>Sign Language Recognition Using MediaPipe Holistic and LSTM Networks — IEEE International Conference for Convergence in Technology (I2CT), 2024. Reached 96% recognition accuracy.</p>
+        <p><a href="https://ieeexplore.ieee.org/document/10543890" target="_blank" rel="noopener">Read on IEEE Xplore</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk about what you're building</h2>
+    <p>Open to AI/ML and LLM engineering roles, and happy to relocate. The fastest way to reach me is email.</p>
+    <div class="contact">
+      <a class="primary" href="mailto:reachnanduu24@gmail.com">reachnanduu24@gmail.com</a>
+      <a href="tel:8178197132">817-819-7132</a>
+      <a href="https://www.linkedin.com/in/nanthakumarashokanand" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Nanduu24" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="colophon">
+      <span>Nantha Kumar · AI / Machine Learning Engineer</span>
+      <span>Arlington, Texas</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var img = document.getElementById('photo');
+    function sync() {
+      var src = img.getAttribute('src');
+      document.body.classList.toggle('has-photo', !!src && src.trim().length > 0);
+    }
+    img.addEventListener('error', function () {
+      document.body.classList.remove('has-photo');
+    });
+    sync();
+  })();
+</script>
+
+</body>
+</html>
