@@ -638,9 +638,9 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
         </div>
       </div>
       <ul>
-        <li>Built the lab's end-to-end ML pipeline in Python to predict rock permeability from NMR T2 measurements across <span class="num">720</span> carbonate core samples from two Kansas wells, handling targets spanning six orders of magnitude with log-space modelling and CDF-based feature encoding.</li>
-        <li>Tuned XGBoost, Random Forest and deep neural-network regressors with nested Optuna search and 5-fold cross-validation, reaching a test R² near <span class="num">0.60</span> against the lab's SDR physics baseline.</li>
-        <li>Ran 50-iteration resampling across seven training sizes (120 to 720 samples) to map how accuracy scales with data volume.</li>
+        <li>Built the lab's end-to-end ML pipeline in Python to predict rock permeability from NMR T2 measurements across <span class="num">720</span> heterogeneous carbonate core samples, handling targets spanning six orders of magnitude with log-space modelling and CDF-based feature encoding.</li>
+        <li>Tuned XGBoost, Random Forest and deep neural-network regressors with Optuna (TPE) under repeated 5-fold × 2 cross-validation across three nested feature scenarios, improving test R² by <span class="num">~50–60%</span> over the lab's SDR physics baseline (<span class="num">R² ≈ 0.42</span> RF/NN, 0.40 XGBoost vs. 0.26 SDR).</li>
+        <li>Stress-tested robustness across seven training sizes (120–720 samples) and 50 repeated 80/20 splits to map how accuracy scales with data volume.</li>
         <li>Used SHAP and Spearman rank correlation to show that 4 of 11 features drive roughly <span class="num">95%</span> of the output. Co-authoring the manuscript.</li>
       </ul>
     </div>
