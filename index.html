@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nantha Kumar — AI / Machine Learning Engineer</title>
-<meta name="description" content="Nantha Kumar — AI/ML Engineer building LLM systems: agentic workflows on LangGraph, grounded retrieval, and applied ML research.">
+<title>Nantha Kumar — AI Engineer | Generative AI &amp; LLM Systems</title>
+<meta name="description" content="Nantha Kumar — AI Engineer building production LLM systems: agents, RAG, and evals. Generative AI on LangGraph, full-stack Next.js &amp; FastAPI.">
 <meta name="author" content="Nantha Kumar">
 <link rel="canonical" href="https://nanduu24.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23123A47'/%3E%3Ctext%20x='32'%20y='44'%20font-family='Georgia,serif'%20font-size='30'%20font-weight='700'%20fill='%23B07A22'%20text-anchor='middle'%3ENK%3C/text%3E%3C/svg%3E">
@@ -12,13 +12,13 @@
 <!-- Open Graph / social link previews -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nanduu24.github.io/">
-<meta property="og:title" content="Nantha Kumar — AI / Machine Learning Engineer">
-<meta property="og:description" content="AI/ML Engineer building LLM systems: agentic workflows on LangGraph, grounded retrieval, and applied ML research.">
+<meta property="og:title" content="Nantha Kumar — AI Engineer | Generative AI &amp; LLM Systems">
+<meta property="og:description" content="AI Engineer building production LLM systems: agents, RAG, and evals. Generative AI on LangGraph, full-stack Next.js &amp; FastAPI.">
 <meta property="og:image" content="https://nanduu24.github.io/professional-photo.jpg">
 <meta property="og:image:alt" content="Nantha Kumar">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nantha Kumar — AI / Machine Learning Engineer">
-<meta name="twitter:description" content="AI/ML Engineer building LLM systems: agentic workflows on LangGraph, grounded retrieval, and applied ML research.">
+<meta name="twitter:title" content="Nantha Kumar — AI Engineer | Generative AI &amp; LLM Systems">
+<meta name="twitter:description" content="AI Engineer building production LLM systems: agents, RAG, and evals. Generative AI on LangGraph, full-stack Next.js &amp; FastAPI.">
 <meta name="twitter:image" content="https://nanduu24.github.io/professional-photo.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -171,6 +171,7 @@ img{max-width:100%;display:block}
   margin:0 0 26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
 }
 .role .sep{width:6px;height:6px;border-radius:50%;background:var(--brass)}
+.role .mid{color:var(--brass);font-weight:600;opacity:.85}
 .role .loc{color:#B9C7CD;font-size:.95em}
 .hero p.lede{
   max-width:54ch;color:#D2DEE2;font-size:clamp(1rem,1.3vw,1.12rem);margin:0 0 32px;
@@ -273,6 +274,10 @@ section{padding:clamp(58px,7.5vw,96px) 0}
 .card h3{
   font-family:var(--display);font-size:1.32rem;font-weight:700;letter-spacing:-.02em;margin:0;line-height:1.15;
 }
+.card h3 a{text-decoration:none;color:inherit;transition:color .18s ease}
+.card h3 a:hover{color:var(--petrol-soft)}
+.card h3 .ext{color:var(--brass);font-size:.82em;font-weight:600;transition:transform .18s ease;display:inline-block}
+.card h3 a:hover .ext{transform:translate(2px,-2px)}
 .tag-live{
   flex:none;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
   padding:5px 10px;border-radius:999px;font-weight:600;white-space:nowrap;
@@ -399,6 +404,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
     <div class="mark"><span class="badge">NK</span>Nantha Kumar</div>
     <nav aria-label="Primary">
       <a href="#work">Work</a>
+      <a href="#opensource">Open source</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
       <a href="#background">Background</a>
@@ -410,18 +416,18 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="status reveal"><span class="dot"></span> Open to AI / ML &amp; LLM engineering roles</div>
+      <div class="status reveal"><span class="dot"></span> Open to AI Engineer &amp; Generative AI roles</div>
       <h1 class="reveal d1">Nantha Kumar</h1>
       <p class="role reveal d1">
-        AI / Machine Learning Engineer
+        AI Engineer <span class="mid">·</span> Software Engineer
         <span class="sep"></span>
         <span class="loc">Irving, TX · open to relocation</span>
       </p>
       <p class="lede reveal d2">
-        I build LLM systems that hold up outside a demo — an agentic platform on LangGraph
-        with vector memory and multi-provider routing, a retrieval agent that
-        <strong>cites its sources and stays quiet when the evidence isn't there</strong>,
-        and applied ML research on rock permeability now heading to publication.
+        I build production LLM systems — <strong>agents, RAG, and evals</strong> — that hold up
+        outside a demo. Generative AI on LangGraph with grounded retrieval and multi-provider
+        routing, full-stack on Next.js and FastAPI, and open-source work merged into
+        <strong>Microsoft PyRIT</strong>.
       </p>
       <div class="contact reveal d3">
         <a class="primary" href="mailto:reachnanduu24@gmail.com">
@@ -440,6 +446,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.13-.3-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.63-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>
           GitHub
         </a>
+        <a href="https://huggingface.co/Nanduu66" target="_blank" rel="noopener">Hugging Face</a>
         <a href="tel:8178197132">817-819-7132</a>
       </div>
     </div>
@@ -452,7 +459,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
         </picture>
         <div class="plate-empty">
           <span>Nantha Kumar</span>
-          <span>AI / Machine Learning Engineer</span>
+          <span>AI Engineer</span>
         </div>
       </div>
       <div class="plate-caption">
@@ -471,8 +478,8 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
         <div class="l">LLM projects built end to end</div>
       </div>
       <div class="stat reveal d1">
-        <div class="n">96<em>%</em></div>
-        <div class="l">Accuracy in IEEE-published research</div>
+        <div class="n">3</div>
+        <div class="l">Open-source PRs to Microsoft &amp; Keras</div>
       </div>
       <div class="stat reveal d2">
         <div class="n">1,014</div>
@@ -497,8 +504,8 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
     <div class="cards">
       <article class="card reveal">
         <div class="card-top">
-          <h3>Mindful AI</h3>
-          <span class="tag-flag">Personal build</span>
+          <h3><a href="https://mindful-ai-omega.vercel.app" target="_blank" rel="noopener">Mindful AI <span class="ext">↗</span></a></h3>
+          <span class="tag-live">Live</span>
         </div>
         <p class="meta">Agentic AI platform with voice and memory</p>
         <ul>
@@ -513,7 +520,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
 
       <article class="card reveal d1">
         <div class="card-top">
-          <h3>FleetIQ</h3>
+          <h3><a href="https://github.com/Sanju970/fleet_intelligence_platform" target="_blank" rel="noopener">FleetIQ <span class="ext">↗</span></a></h3>
           <span class="tag-flag">Buildathon '26</span>
         </div>
         <p class="meta">Grounded document Q&amp;A agent — team project · Dallas, 32-hour build</p>
@@ -529,7 +536,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
 
       <article class="card reveal">
         <div class="card-top">
-          <h3>Job Agent</h3>
+          <h3><a href="https://github.com/Nanduu24/jobagent" target="_blank" rel="noopener">Job Agent <span class="ext">↗</span></a></h3>
         </div>
         <p class="meta">Autonomous job-application pipeline</p>
         <ul>
@@ -558,7 +565,64 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
   </div>
 </section>
 
-<section id="research">
+<section id="opensource">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Open source</span>
+      <h2>Contributions upstream <span class="count">3 PRs</span></h2>
+      <p class="sec-sub">Fixes and features sent to tools the ML community actually runs — merged into Microsoft PyRIT, in review at Microsoft vasim and Keras.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-top">
+          <h3><a href="https://github.com/microsoft/PyRIT/pull/2649" target="_blank" rel="noopener">Microsoft PyRIT <span class="ext">↗</span></a></h3>
+          <span class="tag-live">Merged</span>
+        </div>
+        <p class="meta">LLM red-teaming toolkit · PR #2649</p>
+        <ul>
+          <li>Added a phrase-aware PinyinConverter that rewrites Chinese prompts into Pinyin variants, testing whether model safety holds when the same request crosses scripts.</li>
+          <li>Shipped with unit and determinism tests, documentation and packaging updates — <span class="num">+570 / −49</span> across 10 files.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">LLM security</span><span class="chip">Pytest</span>
+        </div>
+      </article>
+
+      <article class="card reveal d1">
+        <div class="card-top">
+          <h3><a href="https://github.com/microsoft/vasim/pull/139" target="_blank" rel="noopener">Microsoft vasim <span class="ext">↗</span></a></h3>
+          <span class="tag-flag">In review</span>
+        </div>
+        <p class="meta">VM autoscaling simulator · PR #139</p>
+        <ul>
+          <li>Root-caused an off-by-one in scaling-event counts — a trailing NaN from pandas <span class="num">shift(-1)</span> was counted as a change, skewing the Pareto-frontier ranking.</li>
+          <li>Shipped the fix with a regression test and updated end-to-end expectations.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Regression tests</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-top">
+          <h3><a href="https://github.com/keras-team/keras/pull/23639" target="_blank" rel="noopener">Keras <span class="ext">↗</span></a></h3>
+          <span class="tag-flag">In review</span>
+        </div>
+        <p class="meta">Deep-learning framework · PR #23639</p>
+        <ul>
+          <li>Fixed silent int→float truncation in selu, soft_shrink and sparse_plus — selu was degrading to elu on integer inputs — across the NumPy, TensorFlow, PyTorch and OpenVINO backends and the symbolic output spec.</li>
+          <li>Added tests covering the corrected behavior on every backend.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="research" class="section-alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Research</span>
@@ -567,8 +631,8 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
 
     <div class="research reveal">
       <div>
-        <h3>AI / ML Research Assistant</h3>
-        <p class="meta">iResearchE3 Lab</p>
+        <h3>AI / Machine Learning Research Assistant</h3>
+        <p class="meta">iResearchE³ Lab</p>
         <p class="meta">University of Texas at Arlington</p>
         <div class="chips">
           <span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Optuna</span><span class="chip">SHAP</span>
@@ -584,7 +648,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
   </div>
 </section>
 
-<section id="skills" class="section-alt">
+<section id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Toolkit</span>
@@ -595,7 +659,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
       <div class="skillcard reveal">
         <h3>AI &amp; LLM engineering</h3>
         <div class="tags">
-          <span>LangGraph</span><span>LangChain</span><span>RAG (hybrid &amp; vector)</span><span>Prompt engineering</span><span>Function calling</span><span>Structured outputs</span><span>Multi-provider routing</span><span>Grounding &amp; guardrails</span><span>STT / TTS</span><span>LangSmith</span><span>Claude</span><span>OpenAI</span><span>Gemini</span><span>Groq</span><span>Llama 3.3</span>
+          <span>LangGraph</span><span>LangChain</span><span>RAG (hybrid &amp; vector)</span><span>Prompt engineering</span><span>Function calling</span><span>Structured outputs</span><span>LLM evaluation</span><span>Multi-provider routing</span><span>Grounding &amp; guardrails</span><span>STT / TTS</span><span>LangSmith</span><span>Claude</span><span>OpenAI</span><span>Gemini</span><span>Groq</span><span>Llama 3.3</span>
         </div>
       </div>
       <div class="skillcard reveal d1">
@@ -607,7 +671,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
       <div class="skillcard reveal">
         <h3>Languages</h3>
         <div class="tags">
-          <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>SQL</span><span>Java</span><span>C++</span><span>C</span>
+          <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>C++</span><span>C</span><span>SQL</span>
         </div>
       </div>
       <div class="skillcard reveal d1">
@@ -632,7 +696,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
   </div>
 </section>
 
-<section id="background">
+<section id="background" class="section-alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Background</span>
@@ -642,8 +706,9 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
     <div class="two">
       <div class="panel reveal">
         <div class="edu">
-          <h3>M.S. Computer Science — AI/ML Specialization</h3>
+          <h3>M.S. Computer Science</h3>
           <p class="meta">University of Texas at Arlington — Arlington, TX</p>
+          <p class="meta">Dual specialization — Software Engineering &amp; Intelligent Systems (AI/ML)</p>
           <p class="meta mono">Aug 2024 – May 2026 · GPA 3.60 / 4.00</p>
         </div>
         <div class="edu">
@@ -673,9 +738,10 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
       <a href="tel:8178197132">817-819-7132</a>
       <a href="https://www.linkedin.com/in/nanthakumarashokanand" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/Nanduu24" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://huggingface.co/Nanduu66" target="_blank" rel="noopener">Hugging Face</a>
     </div>
     <div class="colophon">
-      <span>Nantha Kumar · AI / Machine Learning Engineer</span>
+      <span>Nantha Kumar · AI Engineer</span>
       <span>Irving, Texas</span>
     </div>
   </div>
@@ -730,7 +796,7 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Nantha Kumar",
-  "jobTitle": "AI / Machine Learning Engineer",
+  "jobTitle": "AI Engineer",
   "url": "https://nanduu24.github.io/",
   "image": "https://nanduu24.github.io/professional-photo.jpg",
   "email": "mailto:reachnanduu24@gmail.com",
@@ -747,7 +813,8 @@ footer p{max-width:52ch;margin:0 0 30px;color:#C6D4D8}
   ],
   "sameAs": [
     "https://www.linkedin.com/in/nanthakumarashokanand",
-    "https://github.com/Nanduu24"
+    "https://github.com/Nanduu24",
+    "https://huggingface.co/Nanduu66"
   ]
 }
 </script>
